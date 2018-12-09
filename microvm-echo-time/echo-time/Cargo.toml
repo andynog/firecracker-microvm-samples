@@ -1,0 +1,9 @@
+[package]
+name = "echo-time"
+version = "0.1.0"
+authors = ["Andy Nogueira"]
+
+[dependencies]
+chrono = "0.4.6"
+crossbeam-channel = "0.3.3"
+signal-hook = "0.1.6"
