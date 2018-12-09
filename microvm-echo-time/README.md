@@ -36,27 +36,27 @@ There are instructions below showing how to include a modified executable into t
 
 - Once you run the script above the terminal should output a few 204 HTTP Response messages. This means firecracker successfully accepted the requests made to its API.
 
-```
-HTTP/1.1 204 No Content
-Date: Sun, 09 Dec 2018 18:11:16 GMT
-
-HTTP/1.1 204 No Content
-Date: Sun, 09 Dec 2018 18:11:16 GMT
-
-HTTP/1.1 204 No Content
-Date: Sun, 09 Dec 2018 18:11:16 GMT
-
-HTTP/1.1 204 No Content
-Date: Sun, 09 Dec 2018 18:11:16 GMT
-
-HTTP/1.1 204 No Content
-Date: Sun, 09 Dec 2018 18:11:16 GMT
-
-```
+    ```
+    HTTP/1.1 204 No Content
+    Date: Sun, 09 Dec 2018 18:11:16 GMT
+    
+    HTTP/1.1 204 No Content
+    Date: Sun, 09 Dec 2018 18:11:16 GMT
+    
+    HTTP/1.1 204 No Content
+    Date: Sun, 09 Dec 2018 18:11:16 GMT
+    
+    HTTP/1.1 204 No Content
+    Date: Sun, 09 Dec 2018 18:11:16 GMT
+    
+    HTTP/1.1 204 No Content
+    Date: Sun, 09 Dec 2018 18:11:16 GMT
+    
+    ```
 
 ##### 3. Run the executable in the microVM
 
-- Swtich back to the terminal window where you ran the script to start firecracker (step 1). You should see some messages from the vm booting up. Hit enter to get a shell prompt.
+- Switch back to the terminal window where you ran the script to start firecracker (step 1). You should see some messages from the vm booting up. Hit enter to get a shell prompt.
 
 - Type *echo-time* in the shell prompt and hit Enter
 
@@ -87,7 +87,7 @@ The current UTC time is 08:19:29 PM
  
 If you want to update the static compiled executable. Change the logic in the [Rust program](./echo-time/src/main.rs) and run the script below. 
 
-The script will re-compile the Rust executable using the right build target (x86_64-unknown-linux-musl), mount the rootfs file system and copy to new executable to the root filesystem, then unmount to rootfs. After the script is run you can run the microVM again and the updated executable will be copied to the microVM. 
+The script will re-compile the Rust executable using the right build target (x86_64-unknown-linux-musl), mount the rootfs file system and copy to new executable to the root filesystem, then unmount to rootfs. After the script is run you can run the microVM again and the updated executable will be copied to the microVM and the image will be unmounted. Once the script has finished you can run the microVM again (step 1).g 
 
 - Open a terminal and run:
 
