@@ -1,6 +1,6 @@
 # Firecracker's Micro Virtual Machines (microVMs) Samples
 
-This repository contains examples of micro virtual machines (microVMs) that can be run using [Firecracker](https://github.com/firecracker-microvm/firecracker){:target="_blank"}.
+This repository contains examples of micro virtual machines (microVMs) that can be run using <a href="https://github.com/firecracker-microvm/firecracker" target="_blank">Firecracker</a>
 
 ##### Requirements
 
@@ -10,9 +10,9 @@ This repository contains examples of micro virtual machines (microVMs) that can 
 
 In order to run these sample micro virtual machines, please download Firecracker or build it from source following the instructions below:
 
-- Download the Firecracker binary following the [Quickstart Guide](https://github.com/firecracker-microvm/firecracker/blob/master/docs/getting-started.md#getting-the-firecracker-binary){:target="_blank"} or
+- Download the Firecracker binary following the <a href="https://github.com/firecracker-microvm/firecracker/blob/master/docs/getting-started.md#getting-the-firecracker-binary" target="_blank">Quickstart Guide</a> or
 
-- To build it from source, please follow Firecracker's [Getting Started Guide](https://github.com/firecracker-microvm/firecracker#getting-started){:target="_blank"}
+- To build it from source, please follow Firecracker's <a href="https://github.com/firecracker-microvm/firecracker#getting-started" target="_blank">Getting Started Guide</a>
 
 - **Save or copy the downloaded or built firecracker executable to this repository folder** in order to run the samples.
 
