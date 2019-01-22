@@ -110,9 +110,9 @@ If you are curious about performance, after the whole setup and once the microVM
 
 If you have [ab - Apache HTTP server benchmarking tool](https://httpd.apache.org/docs/2.4/programs/ab.html) utility installed you can try to submit thousands of requests:
 
-For example, making 50K requests with 100 concurrent requests at a time:
+For example, to make 50K requests with 100 concurrent requests at a time open a terminal propmt on the host machine and type:
 
-`ab -c 100 -n 50000 http://172.16.0.2:8080/`
+`$ ab -c 100 -n 50000 http://172.16.0.2:8080/`
 
 On my machine (Intel(R) Core(TM) i5-8250U CPU @ 1.60GHz) it took 6.8 seconds with almost 7400 reqs/sec with 99% of the requests completed in 16ms  and the max CPU for Firecracker process during execution was only 12% (this might vary on different machines and also there's no network latency in this case since everything was running locally but still impressive). 
 
@@ -178,7 +178,7 @@ Percentage of the requests served within a certain time (ms)
 
 ### Troubleshooting networking issues
 
-If you can't reach the web server from the host machine. Please try this commands to help you determine what might be causing the issue.
+If you can't reach the web server from the host machine. Please try these commands to help you determine what might be causing the issue.
 
 ##### On the host machine:
 
@@ -235,14 +235,13 @@ If you can't reach the web server from the host machine. Please try this command
 
 #### Cleaning up the network tap
 
-If you want to delete the tap0 network, open a terminal prompt and execute the command below:
+If you want to delete the tap0 network, open a terminal prompt on the host machine and execute the command below:
 
 `sudo ip link del tap0`
 
 #### Downloading image files (kernel and rootfs)
 
 If you want to download updates for the image files you can use the script below.
-
 
 - Open a terminal window and run:
 
@@ -272,8 +271,8 @@ The script will re-compile the Rust executable using the right build target (x86
 
 If you get errors about the lack of free space you might need to increase the size of the rootfs file. You can do that by running the commands:
 
-```e2fsck -f ./echo-time-minvm-rootfs.ext4```
+```e2fsck -f ./web-server-rootfs.ext4```
 
-and then run this command (if you want to increase it to 20 MB for example)
+and then run this command (if you want to increase it to 40 MB for example)
 
-```resize2fs ./echo-time-minvm-rootfs.ext4 20M```
+```resize2fs ./web-server-rootfs.ext4 40M```
