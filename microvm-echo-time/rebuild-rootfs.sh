@@ -5,7 +5,7 @@
 #################################################################################
 
 # The rootfs image file
-ROOTFS_IMAGE=echo-time-minvm-rootfs.ext4
+ROOTFS_IMAGE=$PWD/images/echo-time-minvm-rootfs.ext4
 
 # Temporary mount folder
 MOUNT_FOLDER=/tmp/echo-rootfs

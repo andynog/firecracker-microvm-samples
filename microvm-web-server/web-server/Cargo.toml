@@ -1,0 +1,7 @@
+[package]
+name = "web-server"
+version = "0.1.0"
+authors = ["Andy Nogueira"]
+
+[dependencies]
+gotham = "0.3.0"

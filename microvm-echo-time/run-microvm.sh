@@ -5,10 +5,10 @@
 #################################################################################
 
 # Kernel Image
-KERNEL=$PWD/hello-vmlinux.bin
+KERNEL=$PWD/images/hello-vmlinux.bin
 
 # Root Filesystem (rootfs) Image
-ROOTFS=$PWD/echo-time-minvm-rootfs.ext4
+ROOTFS=$PWD/images/echo-time-minvm-rootfs.ext4
 
 # Number of vCPUs to allocate for the microvm
 VCPU_COUNT=1

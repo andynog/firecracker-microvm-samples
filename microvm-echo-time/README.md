@@ -1,4 +1,4 @@
-### Echo Time microVM
+## Echo Time microVM
 
 **NOTE:** This sample has been tested running on a __Ubuntu 18.04.1 LTS__ machine (not virtualized).
 
@@ -16,9 +16,9 @@ This sample has scripts that could be re-used by other projects as the starting 
 
 There are instructions below showing how to include a modified executable into the rootfs image file.
 
-#### Running the microVM
+### Running the microVM
 
-##### 1. Start Firecrakcer
+#### 1. Start Firecrakcer
 
 **NOTE:** Before you run this microVM, please ensure you've followed the instructions on this repository's [README](../README.md) on how to download or build Firecracker from source.
 
@@ -28,7 +28,7 @@ There are instructions below showing how to include a modified executable into t
 
 **NOTE**: You will be prompted for the password when running this script since in order to run Firecracker you need KVM properly configured as that uses 'sudo' as per [Firecracker's Prerequisites section](https://github.com/firecracker-microvm/firecracker/blob/master/docs/getting-started.md#prerequisites) instructions.
 
-##### 2. Run the microVM
+#### 2. Run the microVM
 
 - Open another terminal window and run:
 
@@ -54,7 +54,7 @@ There are instructions below showing how to include a modified executable into t
     
     ```
 
-##### 3. Run the executable in the microVM
+#### 3. Run the executable in the microVM
 
 - Switch back to the terminal window where you ran the script to start firecracker (step 1). You should see some messages from the vm booting up. Hit enter to get a shell prompt.
 
@@ -73,11 +73,11 @@ The current UTC time is 08:19:26 PM
 The current UTC time is 08:19:29 PM
 ```
 
-- Hit Ctrl+C to stop the program
+- Hit Ctrl+C to stop the program (This is not working, to stop just close the terminal. See [issue](https://github.com/andynog/firecracker-microvm-samples/issues/1))
 
 - To stop the microVM and firecracker just close both terminal windows.
 
-#### Rebuilding the rootfs and including a modified Rust executable
+### Rebuilding the rootfs and including a modified Rust executable
 
 **NOTE:**
  - Please ensure you don't have any firecracker or microVM running before proceeding with this step.
@@ -95,12 +95,12 @@ The script will re-compile the Rust executable using the right build target (x86
 
 **NOTE**: You will be prompted for the password when running this script since in order to mount the rootfs image properly it needs 'sudo'.
 
-##### Resizing the rootfs image file
+#### Resizing the rootfs image file
 
 If you get errors about the lack of free space you might need to increase the size of the rootfs file. You can do that by running the commands:
 
-```e2fsck -f ./echo-time-minvm-rootfs.ext4```
+```e2fsck -f ./images/echo-time-minvm-rootfs.ext4```
 
 and then run this command (if you want to increase it to 20 MB for example)
 
-```resize2fs ./echo-time-minvm-rootfs.ext4 20M```
+```resize2fs ./images/echo-time-minvm-rootfs.ext4 20M```

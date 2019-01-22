@@ -23,14 +23,22 @@ In order to run these sample microVMs, please download Firecracker or build it f
 
 | Name      | Sample Folder           | Description  |
 | ------------- |:-------------:| -----------:|
-| Echo Time     | [microvm-echo-time](./microvm-echo-time) | Minimal microVM (~10 MB rootfs) with a minimal Busybox guest operating system and a Rust executable that echo the current time|
+| Echo Time     | [microvm-echo-time](./microvm-echo-time) | Minimal microVM (~10 MB rootfs) with a minimal Busybox guest OS and a Rust executable that echo the current time|
+| Web Server     | [microvm-web-server](./microvm-web-server) | microVM minimal guest OS (Alpine Linux) with network enabled and a simple web server|
 
 #### Roadmap
 
-- Provide additional samples that include networking, running a microservice, etc.
+- Provide additional samples that include:
+ 
+    - ~~Minimal microVM~~ (Done => Echo Time sample)
+    - ~~Networking~~ (Done => Web Server sample)
+    - microVM Metadata Service (mmds) (TBD)
+    - ssh (TBD)
 
 #### Disclaimer
 
 These sample micro virtual machines (microVMs) are for demonstration purposes only. These are not production ready microVMs. 
 
-The goal of making these microVMs available is to provide a learning resource for people interested in Firecracker technology.
+The samples have been tested but there's no guarantee they will work on different machines and configurations. Some troubleshooting tips are provided in case issues occur. Please use them with caution or setup an experimental environment to test these samples since some samples make modifications in the host machine (e.g. networking, etc.)
+
+The goal of making these microVMs available is to provide a learning resource for people interested in [Firecracker's virtual machine manager (vmm)](https://firecracker-microvm.github.io/) technology.

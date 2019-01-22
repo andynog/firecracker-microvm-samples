@@ -1,5 +1,13 @@
 #!/usr/bin/env bash
 
+if [ -r /dev/kvm ] && [ -w /dev/kvm ]; then
+ echo "KVM OK"
+else
+ echo "KVM not configured properly. Try to configure using 'sudo setfacl -m u:${USER}:rw /dev/kvm'"
+ echo "Aborting"
+ exit 1
+fi
+
 #################################################################################
 # Parameters
 #################################################################################
@@ -22,11 +30,10 @@ if [ ! -f $FIRECRACKER_EXE ]; then
     exit 1
 fi
 
-# Setting Up KVM Access. As per the Firecracker's Prerequisites section: https://github.com/firecracker-microvm/firecracker/blob/master/docs/getting-started.md#prerequisites
-sudo setfacl -m u:${USER}:rw /dev/kvm
 
 # Make sure Firecracker can create its API socket
 rm -f $FIRECRACKER_SOCK
 
 # Start firecracker
+echo "Start firecracker...Listening for API calls..."
 ../firecracker --api-sock $FIRECRACKER_SOCK
