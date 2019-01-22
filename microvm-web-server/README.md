@@ -44,7 +44,7 @@ You will be prompted for the password when running this script since in order to
 
     ```./run-microvm.sh```
 
-- Once you run the script above the terminal should output a few 204 HTTP Response messages. This means firecracker successfully accepted the requests made to its API.
+- Once you run the script above the terminal should output six 204 HTTP Response messages. This means firecracker successfully accepted the requests made to its API.
 
     ```
     HTTP/1.1 204 No Content
@@ -96,7 +96,7 @@ You will be prompted for the password when running this script since in order to
     
     If everything was configured properly you should see a message saying __MicroVM says => Hello World!__
     
-    [](browser.png)
+    ![browser](browser.png)
     
 
 - To stop the microVM and firecracker hit CTRL+C to stop the web server and type in the terminal:
